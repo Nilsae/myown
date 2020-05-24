@@ -11,7 +11,7 @@ from .forms import UserRegistrationForm
 
 def login_view(request):
     if request.method == 'GET':
-        return render(request, 'login.html')
+        return render(request,'login.html')
     if request.method == 'POST':
         username = request.POST.get('username')
         pwd = request.POST.get('password')
@@ -36,20 +36,22 @@ def register_view(request):
             reg_form.save()
             data = reg_form.cleaned_data
             user = authenticate(username=data['username'], password=data['password'])
-            if user is None:
-                return HttpResponse('invalid Login')
-            else:
-                login(request, user)
-                return HttpResponse(request.user.username)
+            # if user is None:
+            #     return HttpResponse('invalid Login')
+            # else:
+            login(request, user)
+            return HttpResponse('Hello, welcome {}'.format(request.user.username))
+            # return HttpResponse(request.user.username)
         else:
             return HttpResponse(str(reg_form.errors))
 
 
 def logout_view(request):
-    if request.method == 'POST':
-        logout(request)
-        return HttpResponse('Successfully Logged You Out Sir!')
-    else:
-        return HttpResponse('Invalid Method')
+    # if request.method == 'POST':
+    logout(request)
+    return HttpResponse('Successfully Logged You Out Sir!')
+    # else:
+    return HttpResponse('Invalid Method')
+
 def static_view(request):
     return HttpResponse('Here has to do with my static files')

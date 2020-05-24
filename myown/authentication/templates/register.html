@@ -6,6 +6,8 @@
 
 </head>
 <body>
+    {% load static %}
+    <img src="{% static "authentication/registration.jpg" %}" alt="My image">
     <form action="{% url 'register' %}" method="post">
         {% csrf_token %}
         {{reg_form.as_p}}
