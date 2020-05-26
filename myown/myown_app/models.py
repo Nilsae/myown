@@ -13,7 +13,8 @@ class post(models.Model):
     creator = models.ForeignKey(User, on_delete=models.CASCADE)
     CHOICES = (('K', 'Kids'), ('M', 'Mature'), ('E', 'Everyone'))
     target_age = models.CharField(max_length=1, choices=CHOICES)
-    image_add = models.ImageField(null=True, blank=True, upload_to="success_image/")
+    # image_add = models.ImageField(null=True, blank=True, upload_to="success_image/")
+
     # def image_tag(self):
     #     from django.utils.html import escape
     #     return u'<img src="%s" />' % escape(image.jpg)
@@ -25,4 +26,9 @@ class Hotel(models.Model):
     name = models.CharField(max_length=50)
     hotel_Main_Img = models.ImageField(upload_to='images/')
 
-
+class article(models.Model):
+    # objects = None
+    # is_active = models.BooleanField(default=False)
+    title = models.CharField(max_length=100)
+    discription = models.TextField(max_length=1000)
+    content = models.TextField(max_length=10000,default='content of this post in none')

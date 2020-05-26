@@ -7,7 +7,9 @@ from .views import myown_app_view,static_view
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns=[
     path('posts/',myown_app_view,name='my own_app_posts'),
-path('static/', static_view, name='static')
+path('',myown_app_view,name='my own_app_posts'),
+path('static/', static_view, name='static'),
+path('admin/',admin.site.urls)
 ]
 urlpatterns+=staticfiles_urlpatterns()
 # _ROOT)if settings.DEBUG:

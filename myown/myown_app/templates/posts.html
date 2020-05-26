@@ -1,8 +1,53 @@
 
 <!DOCTYPE html>
 <html>
+<style>
+div.welcome_image {
+  position: fixed;
+  top: 60px;
+  right: 900px;
+  width: 300px;
+<!--  border: 3px solid #73AD21;-->
+}
+div.posts {
+  position: fixed;
+  top: 420px;
+  right: 400px;
+<!--  width: 1000px;-->
+<!--  border: 3px solid #8B008B;-->
+}
+div.articles {
+  position: fixed;
+  top: 420px;
+  right: 700px;
+  width: 1000px;
+  border: 3px solid #8B008B;
+}
+H1 {
+color:purple;
+}
+</style>
 <body>
 {% load static %}
-<img src="{% static 'my_app/example.jpg' %}" alt="My image">
+<div class="welcome_image"><img src="{% static 'my_app/welcome.jpg' %}" alt="My image"></div>
+<div class="posts">
+    <H1 >POSTS</H1>
+    {% for p in post %}
+    <p>{{p.text}}</p>
+    <p>{{p.creator}}</p>
+    {% endfor %}
+
+
+</div>
+<div class="articles">
+    <H1 > ARTICLES</H1>
+    {% for a in article %}
+    <h5>{{a.title}}</h5>
+    <p>{{a.discription}}</p>
+    <p>{{a.content}}</p>
+    {% endfor %}
+
+
+</div>
 </body>
 </html>

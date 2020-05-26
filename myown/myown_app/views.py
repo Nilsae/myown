@@ -5,7 +5,7 @@ from django.shortcuts import render,HttpResponse
 from .models import post
 def myown_app_view(request):
     queryset = post.objects.filter(target_age='E')
-    return render(request,'posts.html',context={'posts':queryset})
+    return render(request,'posts.html',context={'post':queryset})
 
 def static_view(request):
     # return HttpResponse('Here has to do with my static files')
