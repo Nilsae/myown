@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 from django.contrib.auth.models import User
-class post(models.Model):
+class posts(models.Model):
     objects = None
     title=models.CharField(max_length=100)
     text = models.CharField(max_length=1000)
@@ -27,8 +27,8 @@ class Hotel(models.Model):
     hotel_Main_Img = models.ImageField(upload_to='images/')
 
 class article(models.Model):
-    # objects = None
-    # is_active = models.BooleanField(default=False)
     title = models.CharField(max_length=100)
     discription = models.TextField(max_length=1000)
     content = models.TextField(max_length=10000,default='content of this post in none')
+class listLink(models.Model):
+    name = models.CharField(max_length = 50)

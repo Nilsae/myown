@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+div.welcome_image {
+  position: fixed;
+  top: 60px;
+  right: 900px;
+  width: 300px;
+<!--  border: 3px solid #73AD21;-->
+}
+H1 {
+color:purple;
+top: 1000px;
+
+}
+div.list {
+color:red;
+}
+</style>
+<body>
+{% load static %}
+<div class="welcome_image"><img src="{% static 'my_app/welcome.jpg' %}" alt="My image"></div>
+    <H1 >LIST OF THINGS:</H1>
+   <div class="list">
+       {% for l in listLink %}
+       <h4><a href="myown_app/posts/">{{l.name}}</a></h4>
+
+        {% endfor %} </div>
+
+</body>
+</html>

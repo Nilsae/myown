@@ -32,7 +32,7 @@ color:purple;
 <div class="welcome_image"><img src="{% static 'my_app/welcome.jpg' %}" alt="My image"></div>
 <div class="posts">
     <H1 >POSTS</H1>
-    {% for p in post %}
+    {% for p in posts %}
     <p>{{p.text}}</p>
     <p>{{p.creator}}</p>
     {% endfor %}
@@ -41,8 +41,8 @@ color:purple;
 </div>
 <div class="articles">
     <H1 > ARTICLES</H1>
-    {% for a in article %}
-    <h5>{{a.title}}</h5>
+    {% for d in article %}
+    <h5>{{d.title}}</h5>
     <p>{{a.discription}}</p>
     <p>{{a.content}}</p>
     {% endfor %}
