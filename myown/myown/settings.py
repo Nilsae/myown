@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myown_app',
     'polls',
-    'authentication'
+    'authentication',
+    # 'getpaid',
+    # 'getpaid_payu'  # one of plugins
 ]
 
 MIDDLEWARE = [
@@ -102,7 +104,17 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+GETPAID_ORDER_MODEL = 'yourapp.MyCustomOrder'
 
+GETPAID_BACKEND_SETTINGS = {
+    "getpaid_payu": {
+        # take these from your merchant panel:
+        "pos_id": 12345,
+        "second_key": "91ae651578c5b5aa93f2d38a9be8ce11",
+        "oauth_id": 12345,
+        "oauth_secret": "12f071174cb7eb79d4aac5bc2f07563f",
+    },
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/

@@ -25,6 +25,7 @@ urlpatterns = [
     path('',include('myown_app.urls')),
     path('polls/', include('polls.urls')),
     path('auth/', include('authentication.urls')),
+    # path('payments/', include('getpaid.urls')),
     # path('static/', include('authentication.urls')),
 ]
 from django.contrib import admin

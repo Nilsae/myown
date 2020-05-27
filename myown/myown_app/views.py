@@ -13,5 +13,5 @@ def static_view(request):
     return render(request,'styles.css')
 def list_of_things_view(request):
     list = listLink.objects.filter()
-    return render(request,'list_of_things.html',context={'listLink':list})
+    return render(request,'List_template.html',context={'listLink':list})
 # Create your views here.

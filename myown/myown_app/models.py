@@ -32,3 +32,4 @@ class article(models.Model):
     content = models.TextField(max_length=10000,default='content of this post in none')
 class listLink(models.Model):
     name = models.CharField(max_length = 50)
+

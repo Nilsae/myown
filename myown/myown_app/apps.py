@@ -9,3 +9,5 @@ class MyownAppConfig(AppConfig):
 
 class ArticleConfig(AppConfig):
     name = 'articles'
+
+
