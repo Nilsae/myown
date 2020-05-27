@@ -18,13 +18,15 @@ from django.conf import settings
 # from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path,include
-
+from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('myown_app/',include('myown_app.urls')),
     path('',include('myown_app.urls')),
     path('polls/', include('polls.urls')),
     path('auth/', include('authentication.urls')),
+    path('accounts/', include('allauth.urls')),  # <--
+    path('index/', TemplateView.as_view(template_name="index.html")), # <--,
     # path('payments/', include('getpaid.urls')),
     # path('static/', include('authentication.urls')),
 ]

@@ -41,6 +41,13 @@ INSTALLED_APPS = [
     'myown_app',
     'polls',
     'authentication',
+    'django.contrib.sites',  # <--
+    # 'social_app',  # <--
+
+    'allauth',  # <--
+    'allauth.account',  # <--
+    'allauth.socialaccount',  # <--
+    'allauth.socialaccount.providers.google',  # <--
     # 'getpaid',
     # 'getpaid_payu'  # one of plugins
 ]
@@ -134,9 +141,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/'
 STATICFILES_DIRS =(
     os.path.join(BASE_DIR,'assets'),
     '/var/www/static/',
 )
 # MEDIA_ROOT =os.path.join(BASE_DIR,'media')
 # MEDIA_URL ='/media/'
+AUTHENTICATION_BACKENDS = (
+ 'django.contrib.auth.backends.ModelBackend',
+ 'allauth.account.auth_backends.AuthenticationBackend',
+ )
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}

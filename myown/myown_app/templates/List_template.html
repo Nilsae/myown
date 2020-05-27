@@ -5,6 +5,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+.button {
+  background-color: #e7e7e7;
+  color: black;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+    top: 0;
+    left: 100   0;
+}
 * {
   box-sizing: border-box;
 }
@@ -60,6 +74,8 @@ body {
 
 <div class="content">
   <h2>CSS Template</h2>
+    <a href="/#" ><button  class="button" >Register</button></a>
+    <a href="/#" ><button class="button" >Sign In</button></a>
     {% load static %}
 <div class="welcome_image"><img src="{% static 'my_app/welcome.jpg' %}" alt="My image"></div>
   <p>A Noob Website.</p>

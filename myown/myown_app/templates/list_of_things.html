@@ -14,6 +14,18 @@ color:purple;
 top: 1000px;
 
 }
+.button {
+  background-color: #e7e7e7;
+  color: black;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 div.list {
 color:red;
 }
@@ -26,6 +38,7 @@ color:red;
        {% for l in listLink %}
        <h4><a href="posts/">{{l.name}}</a></h4>
         {% endfor %} </div>
+<button class="button">Button</button>
 
 </body>
 </html>
