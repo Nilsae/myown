@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+
+  <title>Site</title>
+</head>
+<body>
+  {% load static %}
+  <script src="{% static 'test_view.js' %}"></script>
+<img src="{% static 'img.png' %}" alt="Mon image" />
+  {% block content %}{% endblock %}
+</body>
+</html>

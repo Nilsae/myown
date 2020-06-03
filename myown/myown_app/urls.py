@@ -3,12 +3,14 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.conf.urls.static import static
 from django.urls import path
-from .views import myown_app_view,static_view,list_of_things_view
+from .views import myown_app_view,static_view,list_of_things_view,testing_view,signup_view
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns=[
     path('posts/',myown_app_view,name='myown_app_posts'),
 path('',list_of_things_view,name='list_of_things'),
 path('static/', static_view, name='static'),
+path('testing/', testing_view, name='testing'),
+path('signup/', signup_view, name='register'),
 # path('admin/',admin.site.urls)
 ]
 urlpatterns+=staticfiles_urlpatterns()

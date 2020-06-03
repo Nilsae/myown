@@ -29,7 +29,7 @@ def login_view(request):
 def register_view(request):
     if request.method == 'GET':
         reg_form = UserRegistrationForm()
-        return render(request, 'register.html', context={'reg_form': reg_form})
+        return render(request, 'signup.html', context={'reg_form': reg_form})
     else:
         reg_form = UserRegistrationForm(data=request.POST)
         if reg_form.is_valid():
